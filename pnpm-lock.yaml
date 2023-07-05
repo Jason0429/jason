@@ -1,24 +1,32 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
+  '@solidjs/router':
+    specifier: ^0.8.2
+    version: 0.8.2(solid-js@1.7.6)
   '@suid/icons-material':
     specifier: ^0.6.3
     version: 0.6.3(solid-js@1.7.6)
   '@suid/material':
     specifier: ^0.12.3
     version: 0.12.3(solid-js@1.7.6)
+  '@suid/system':
+    specifier: ^0.10.2
+    version: 0.10.2(solid-js@1.7.6)
   firebase:
     specifier: ^9.23.0
     version: 9.23.0
+  solid-icons:
+    specifier: ^1.0.9
+    version: 1.0.9(solid-js@1.7.6)
   solid-js:
     specifier: ^1.7.6
     version: 1.7.6
 
 devDependencies:
+  '@suid/types':
+    specifier: ^0.5.1
+    version: 0.5.1(solid-js@1.7.6)
   '@suid/vite-plugin':
     specifier: ^0.1.4
     version: 0.1.4(vite@4.3.9)
@@ -34,6 +42,9 @@ devDependencies:
   eslint-plugin-solid:
     specifier: ^0.12.1
     version: 0.12.1(eslint@8.44.0)(typescript@5.1.3)
+  prettier:
+    specifier: 2.x
+    version: 2.8.8
   solid-devtools:
     specifier: ^0.27.3
     version: 0.27.3(solid-js@1.7.6)(vite@4.3.9)
@@ -46,6 +57,9 @@ devDependencies:
   vite-plugin-solid:
     specifier: ^2.7.0
     version: 2.7.0(solid-js@1.7.6)(vite@4.3.9)
+  vite-tsconfig-paths:
+    specifier: ^4.2.0
+    version: 4.2.0(typescript@5.1.3)(vite@4.3.9)
 
 packages:
 
@@ -1450,6 +1464,14 @@ packages:
       solid-js: 1.7.6
     dev: true
 
+  /@solidjs/router@0.8.2(solid-js@1.7.6):
+    resolution: {integrity: sha512-gUKW+LZqxtX6y/Aw6JKyy4gQ9E7dLqp513oB9pSYJR1HM5c56Pf7eijzyXX+b3WuXig18Cxqah4tMtF0YGu80w==}
+    peerDependencies:
+      solid-js: ^1.5.3
+    dependencies:
+      solid-js: 1.7.6
+    dev: false
+
   /@suid/base@0.8.2(solid-js@1.7.6):
     resolution: {integrity: sha512-saue6/ss0ylDMz2mOK6kKvxBqkt5wCNTOutsQ6oi+zeeKXp+0SRpfhqmhhBWZw9s00eq+qE17G4ln2yvZ7d9ug==}
     peerDependencies:
@@ -1521,7 +1543,6 @@ packages:
       solid-js: ^1.7.5
     dependencies:
       solid-js: 1.7.6
-    dev: false
 
   /@suid/utils@0.7.2(solid-js@1.7.6):
     resolution: {integrity: sha512-NVOYWEGFnY2TaVuY/5F+HxtTE4G6HYfag1+/XMEkyYrZlTjrubDQ2GnWW0NIcKnreO0Fq+vxineBWA76HVNHcw==}
@@ -2411,6 +2432,10 @@ packages:
       slash: 3.0.0
     dev: true
 
+  /globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+    dev: true
+
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -3105,6 +3130,15 @@ packages:
       - supports-color
     dev: true
 
+  /solid-icons@1.0.9(solid-js@1.7.6):
+    resolution: {integrity: sha512-OyCO/bl93eGO1QziP52jHL4FeG6+EXSUeb3VNMbWASHu0pPViFd8mX6BdiMWKbWNOEuY6YsW6imeQFUG21ojrg==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      solid-js: '*'
+    dependencies:
+      solid-js: 1.7.6
+    dev: false
+
   /solid-js@1.7.6:
     resolution: {integrity: sha512-DXVOTjUh/bIAhE0fIqu3ezGLyQaez7v8EOw3uPLIi87DmLjg+hsuCAgKyNIZ+o4jUetOk3ZORccvJmE1yZUk8g==}
     dependencies:
@@ -3217,6 +3251,19 @@ packages:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: false
 
+  /tsconfck@2.1.1(typescript@5.1.3):
+    resolution: {integrity: sha512-ZPCkJBKASZBmBUNqGHmRhdhM8pJYDdOXp4nRgj/O0JwUwsMq50lCDRQP/M5GBNAA0elPrq4gAeu4dkaVCuKWww==}
+    engines: {node: ^14.13.1 || ^16 || >=18}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.3.5 || ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.1.3
+    dev: true
+
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
@@ -3313,6 +3360,23 @@ packages:
       vitefu: 0.2.4(vite@4.3.9)
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite-tsconfig-paths@4.2.0(typescript@5.1.3)(vite@4.3.9):
+    resolution: {integrity: sha512-jGpus0eUy5qbbMVGiTxCL1iB9ZGN6Bd37VGLJU39kTDD6ZfULTTb1bcc5IeTWqWJKiWV5YihCaibeASPiGi8kw==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+      globrex: 0.1.2
+      tsconfck: 2.1.1(typescript@5.1.3)
+      vite: 4.3.9
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /vite@4.3.9:
@@ -3479,3 +3543,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

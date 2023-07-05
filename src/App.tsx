@@ -1,26 +1,29 @@
-import type { Component } from 'solid-js';
+import { Layout, Navbar } from '@/components';
+import { Paths } from '@/enums';
+import '@/index.css';
+import { darkTheme, getTheme } from '@/theme';
+import { Route, Router, Routes } from '@solidjs/router';
+import { ThemeProvider } from '@suid/material';
+import { type Component, lazy } from 'solid-js';
 
-import styles from './App.module.css';
-import logo from './logo.svg';
+import { themeMode } from './stores/themeStore';
+
+const Home = lazy(() => import('@/views/Home'));
+const Page404 = lazy(() => import('@/views/Page404'));
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <Layout>
+        <Navbar />
+        <Router>
+          <Routes>
+            <Route path={Paths.home} component={Home} />
+            <Route path={Paths.notFound} component={Page404} />
+          </Routes>
+        </Router>
+      </Layout>
+    </ThemeProvider>
   );
 };
 
