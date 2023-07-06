@@ -22,20 +22,22 @@ const Home = () => {
         <Box class="gradient-border" height="50vh">
           <Stack direction="column" justifyContent="center" height="100%" p={5} spacing={5}>
             <Stack direction="column">
-              <Typography variant="h1">👋 Hi! I'm Jason</Typography>
+              <Typography variant={isAboveMD() ? 'h1' : 'h2'}>👋 Hi! I'm Jason</Typography>
               {currentPosition() ? (
-                <Typography variant="body1">{currentPosition()}</Typography>
+                <Typography variant={isAboveMD() ? 'body1' : 'subtitle1'}>
+                  {currentPosition()}
+                </Typography>
               ) : (
                 <CurrentPositionSkeleton />
               )}
             </Stack>
             <Stack direction="column" spacing={0}>
-              <Typography variant="h2" pt={2}>
+              <Typography variant={isAboveMD() ? 'h2' : 'h3'} pt={2}>
                 Previously
               </Typography>
               <For each={previousCareers()} fallback={<PreviousCareersSkeleton />}>
                 {({ title, company }) => (
-                  <Typography variant="body1">
+                  <Typography variant={isAboveMD() ? 'body1' : 'subtitle1'}>
                     {title} @ {company}
                   </Typography>
                 )}

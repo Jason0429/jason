@@ -55,11 +55,11 @@ export const darkTheme = createTheme({
       fontWeight: 700
     },
     h2: {
-      fontSize: '1.5rem',
+      fontSize: '2rem',
       fontWeight: 700
     },
     h3: {
-      fontSize: '1.25rem',
+      fontSize: '1.5rem',
       fontWeight: 700
     },
     body1: {

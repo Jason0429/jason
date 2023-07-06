@@ -83,7 +83,10 @@ const ProjectCard: Component<Props> = ({ project }) => {
   }
 
   return (
-    <Card sx={{ height: 250 }} class="gradient-border-blue">
+    <Card
+      sx={{ height: 250, background: theme.palette.background.default }}
+      class="gradient-border-blue"
+    >
       <CardContent>
         <Stack direction="column" spacing={1}>
           <Stack direction="column" spacing={2}>

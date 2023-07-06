@@ -90,7 +90,7 @@ html {
 .gradient-border-blue {
   border-style: solid;
   border-image-slice: 1;
-  border-width: 1px;
+  border-width: 2px;
   border-image-source: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
 }
 
