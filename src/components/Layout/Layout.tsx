@@ -1,4 +1,4 @@
-import { Stack, useMediaQuery, useTheme } from '@suid/material';
+import { Box, Stack, useMediaQuery, useTheme } from '@suid/material';
 import { type Component, JSX } from 'solid-js';
 
 interface Props {
@@ -19,6 +19,10 @@ const Layout: Component<Props> = ({ children }) => {
         p: isAboveMD() ? 15 : 5
       }}
     >
+      {/* <Box class="ocean">
+        <Box class="wave" />
+        <Box class="wave" />
+      </Box> */}
       {children}
     </Stack>
   );

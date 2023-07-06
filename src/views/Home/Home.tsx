@@ -1,7 +1,7 @@
 import { getCurrentPosition, getProjects } from '@/api';
 import { getPreviousCareers } from '@/api/previously';
 import { GradientText, ProjectCard } from '@/components';
-import { Box, Grid, Stack, Typography, useMediaQuery, useTheme } from '@suid/material';
+import { Box, Grid, Paper, Stack, Typography, useMediaQuery, useTheme } from '@suid/material';
 import { For, createResource } from 'solid-js';
 
 import CurrentPositionSkeleton from './CurrentPositionSkeleton';
@@ -18,27 +18,31 @@ const Home = () => {
 
   return (
     <Stack direction="column">
-      <Stack direction="column" spacing={2} height={isAboveMD() ? '80vh' : '100vh'} pt={10}>
-        <Typography variant="h1">👋</Typography>
-        {/* <GradientText variant="h1" text="Hi! I'm Jason" /> */}
-        <Typography variant="h1">Hi! I'm Jason</Typography>
-        {currentPosition() ? (
-          <Typography variant="body1">{currentPosition()}</Typography>
-        ) : (
-          <CurrentPositionSkeleton />
-        )}
-        <Typography variant="h2" pt={2}>
-          Previously
-        </Typography>
-        <Stack direction="column" spacing={0}>
-          <For each={previousCareers()} fallback={<PreviousCareersSkeleton />}>
-            {({ title, company }) => (
-              <Typography variant="body1">
-                {title} @ {company}
+      <Stack direction="column" spacing={3} height={isAboveMD() ? '80vh' : '100vh'} pt={10}>
+        <Box class="gradient-border" height="50vh">
+          <Stack direction="column" justifyContent="center" height="100%" p={5} spacing={5}>
+            <Stack direction="column">
+              <Typography variant="h1">👋 Hi! I'm Jason</Typography>
+              {currentPosition() ? (
+                <Typography variant="body1">{currentPosition()}</Typography>
+              ) : (
+                <CurrentPositionSkeleton />
+              )}
+            </Stack>
+            <Stack direction="column" spacing={0}>
+              <Typography variant="h2" pt={2}>
+                Previously
               </Typography>
-            )}
-          </For>
-        </Stack>
+              <For each={previousCareers()} fallback={<PreviousCareersSkeleton />}>
+                {({ title, company }) => (
+                  <Typography variant="body1">
+                    {title} @ {company}
+                  </Typography>
+                )}
+              </For>
+            </Stack>
+          </Stack>
+        </Box>
       </Stack>
       <Stack direction="column" id="projects" minHeight="100vh" pb={10}>
         <Box sx={{ flexGrow: 1 }}>

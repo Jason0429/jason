@@ -31,12 +31,11 @@ const ProjectCard: Component<Props> = ({ project }) => {
 
     return (
       <Card
+        class="gradient-border-blue"
         sx={{
           height: 280,
           width: '100%',
-          background: theme.palette.background.paper,
-          border: `2px solid ${theme.palette.text.primary}20`
-          // border: 'thin solid red'
+          background: theme.palette.background.default
         }}
       >
         <CardContent>
@@ -84,7 +83,7 @@ const ProjectCard: Component<Props> = ({ project }) => {
   }
 
   return (
-    <Card sx={{ height: 250 }}>
+    <Card sx={{ height: 250 }} class="gradient-border-blue">
       <CardContent>
         <Stack direction="column" spacing={1}>
           <Stack direction="column" spacing={2}>

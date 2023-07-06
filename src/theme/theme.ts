@@ -51,7 +51,7 @@ export const darkTheme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
     h1: {
-      fontSize: '2.5rem',
+      fontSize: '3rem',
       fontWeight: 700
     },
     h2: {
@@ -101,9 +101,6 @@ export const darkTheme = createTheme({
     background: {
       default: '#121212',
       paper: '#404040'
-
-      // default: '#708090',
-      // paper: '#4e5a65'
     }
   }
 });
