@@ -1,6 +1,5 @@
+import { LocalStorageKeys, ThemeModes } from '@/enums';
 import { createSignal } from 'solid-js';
-
-import { LocalStorageKeys, ThemeModes } from '../enums';
 
 const initialThemeMode =
   (localStorage.getItem(LocalStorageKeys.theme) as ThemeModes | undefined) ?? ThemeModes.light;
