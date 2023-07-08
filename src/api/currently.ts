@@ -1,7 +1,7 @@
 import { Collections } from '@/enums';
 import { db } from '@/firebase/config';
 import { CareerPosition } from '@/types';
-import { collection, doc, getDoc, getDocs, orderBy, query } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 
 const currentPositionPath = doc(db, `${Collections.currently}/position`);
 
