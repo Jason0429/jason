@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <Stack direction="column">
       <Stack direction="column" spacing={3} height={isAboveMD() ? '80vh' : '100vh'} pt={10}>
-        <Box class="gradient-border" height="50vh">
+        <Box class="gradient-border" height="30rem">
           <Stack direction="column" justifyContent="center" height="100%" p={5} spacing={5}>
             <Stack direction="column">
               <Typography variant={isAboveMD() ? 'h1' : 'h2'}>👋 Hi! I'm Jason</Typography>

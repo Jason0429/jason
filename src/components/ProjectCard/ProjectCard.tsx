@@ -16,6 +16,7 @@ import { AiFillGithub as GithubIcon } from 'solid-icons/ai';
 import { CgWebsite as WebsiteIcon } from 'solid-icons/cg';
 import { Component, For } from 'solid-js';
 
+const CARD_HEIGHT = '20rem';
 const CIRCLE_SIZE = 30;
 const RECT_SIZE: [number, number] = [30, 100];
 
@@ -33,7 +34,7 @@ const ProjectCard: Component<Props> = ({ project }) => {
       <Card
         class="gradient-border-blue"
         sx={{
-          height: 280,
+          height: CARD_HEIGHT,
           width: '100%',
           background: theme.palette.background.default
         }}
@@ -84,7 +85,7 @@ const ProjectCard: Component<Props> = ({ project }) => {
 
   return (
     <Card
-      sx={{ height: 250, background: theme.palette.background.default }}
+      sx={{ height: CARD_HEIGHT, background: theme.palette.background.default }}
       class="gradient-border-blue"
     >
       <CardContent>
