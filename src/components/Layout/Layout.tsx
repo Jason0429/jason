@@ -16,7 +16,7 @@ const Layout: Component<Props> = ({ children }) => {
         background: theme.palette.background.default,
         width: '100%',
         minHeight: '100vh',
-        p: isAboveMD() ? 15 : 2
+        px: isAboveMD() ? 15 : 2
       }}
     >
       {children}
