@@ -8,6 +8,9 @@ import CurrentPositionSkeleton from './CurrentPositionSkeleton';
 import PreviousCareersSkeleton from './PreviousCareersSkeleton';
 import ProjectsSkeleton from './ProjectsSkeleton';
 
+const MIN_INTRO_CARD_HEIGHT = '20rem';
+const INTRO_CARD_HEIGHT = '60vh';
+
 const Home = () => {
   const theme = useTheme();
   const isAboveMD = useMediaQuery(theme.breakpoints.up('md'));
@@ -19,7 +22,7 @@ const Home = () => {
   return (
     <Stack direction="column">
       <Stack direction="column" spacing={3} height={isAboveMD() ? '80vh' : '100vh'} pt={10}>
-        <Box class="gradient-border" height="30rem">
+        <Box class="gradient-border" minHeight={MIN_INTRO_CARD_HEIGHT} height={INTRO_CARD_HEIGHT}>
           <Stack direction="column" justifyContent="center" height="100%" p={5} spacing={5}>
             <Stack direction="column">
               <Typography variant={isAboveMD() ? 'h1' : 'h2'}>👋 Hi! I'm Jason</Typography>
