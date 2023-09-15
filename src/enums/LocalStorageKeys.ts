@@ -1,3 +1,4 @@
 export enum LocalStorageKeys {
-  theme = 'theme'
+  version = 'version',
+  projects = 'projects'
 }

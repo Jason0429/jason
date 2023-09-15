@@ -2,5 +2,6 @@ export enum Collections {
   projects = 'projects',
   previously = 'previously',
   currently = 'currently',
-  pdfs = 'pdfs'
+  pdfs = 'pdfs',
+  sys = 'sys'
 }

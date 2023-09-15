@@ -7,6 +7,7 @@ import {
   CardContent,
   Chip,
   Divider,
+  Paper,
   Skeleton,
   Stack,
   Typography,
@@ -16,8 +17,8 @@ import { AiFillGithub as GithubIcon } from 'solid-icons/ai';
 import { CgWebsite as WebsiteIcon } from 'solid-icons/cg';
 import { Component, For } from 'solid-js';
 
-const CARD_HEIGHT = '20rem';
-const CIRCLE_SIZE = 30;
+const CARD_HEIGHT = '350px';
+const CIRCLE_SIZE: [number, number] = [20, 50];
 const RECT_SIZE: [number, number] = [30, 100];
 
 interface Props {
@@ -31,21 +32,94 @@ const ProjectCard: Component<Props> = ({ project }) => {
     const { title, desc, languages, github, website } = project;
 
     return (
+      <Paper>
+        <Card
+          sx={{
+            height: CARD_HEIGHT,
+            width: '100%'
+          }}
+        >
+          <CardContent>
+            <Stack direction="column" spacing={2}>
+              <Stack direction="column" spacing={1}>
+                <Typography variant="h6">{title}</Typography>
+                <Divider />
+              </Stack>
+              <Typography variant="body2">{desc}</Typography>
+              <Stack
+                direction="row"
+                sx={{
+                  flexWrap: 'wrap',
+                  gap: 1,
+                  maxWidth: '100%'
+                }}
+              >
+                <For each={languages}>
+                  {(language) => (
+                    <Chip
+                      label={language}
+                      variant="outlined"
+                      size="small"
+                      sx={{
+                        fontSize: '0.75rem',
+                        fontWeight: 500,
+                        color: theme.palette.text.secondary
+                      }}
+                    />
+                  )}
+                </For>
+              </Stack>
+              <Stack direction="row" spacing={1}>
+                {github && (
+                  <IconButton href={github} target="_blank">
+                    <GithubIcon fill={theme.palette.text.primary} />
+                  </IconButton>
+                )}
+                {website && (
+                  <IconButton href={website} target="_blank">
+                    <WebsiteIcon fill={theme.palette.text.primary} />
+                  </IconButton>
+                )}
+              </Stack>
+            </Stack>
+          </CardContent>
+        </Card>
+      </Paper>
+    );
+  }
+
+  return (
+    <Paper>
       <Card
-        class="gradient-border-blue"
         sx={{
           height: CARD_HEIGHT,
-          width: '100%',
-          background: theme.palette.background.default
+          width: '100%'
         }}
       >
         <CardContent>
           <Stack direction="column" spacing={2}>
             <Stack direction="column" spacing={1}>
-              <Typography variant="h3">{title}</Typography>
+              <Stack direction="row" spacing={2}>
+                <Skeleton variant="text" width={150} />
+                <Skeleton variant="text" width={65} />
+              </Stack>
               <Divider />
             </Stack>
-            <Typography variant="subtitle1">{desc}</Typography>
+            <Stack direction="column" spacing={1}>
+              <Stack direction="row" spacing={1}>
+                <Skeleton variant="text" width={200} />
+                <Skeleton variant="text" width={100} />
+              </Stack>
+              <Stack direction="row" spacing={1}>
+                <Skeleton variant="text" width={75} />
+                <Skeleton variant="text" width={50} />
+                <Skeleton variant="text" width={175} />
+              </Stack>
+              <Stack direction="row" spacing={1}>
+                <Skeleton variant="text" width={175} />
+                <Skeleton variant="text" width={125} />
+              </Stack>
+            </Stack>
             <Stack
               direction="row"
               sx={{
@@ -54,76 +128,27 @@ const ProjectCard: Component<Props> = ({ project }) => {
                 maxWidth: '100%'
               }}
             >
-              <For each={languages}>
-                {(language) => (
-                  <Chip
-                    label={language}
-                    variant="filled"
-                    size="small"
-                    sx={{ color: theme.palette.text.secondary }}
+              <For each={Array(6)}>
+                {() => (
+                  <Skeleton
+                    variant="rectangular"
+                    height={CIRCLE_SIZE[0]}
+                    width={CIRCLE_SIZE[1]}
+                    sx={{
+                      borderRadius: 10
+                    }}
                   />
                 )}
               </For>
             </Stack>
             <Stack direction="row" spacing={1}>
-              {github && (
-                <IconButton href={github} target="_blank">
-                  <GithubIcon fill={theme.palette.text.primary} />
-                </IconButton>
-              )}
-              {website && (
-                <IconButton href={website} target="_blank">
-                  <WebsiteIcon fill={theme.palette.text.primary} />
-                </IconButton>
-              )}
+              <Skeleton variant="rectangular" height={RECT_SIZE[0]} width={RECT_SIZE[1]} />
+              <Skeleton variant="rectangular" height={RECT_SIZE[0]} width={RECT_SIZE[1]} />
             </Stack>
           </Stack>
         </CardContent>
       </Card>
-    );
-  }
-
-  return (
-    <Card
-      sx={{ height: CARD_HEIGHT, background: theme.palette.background.default }}
-      class="gradient-border-blue"
-    >
-      <CardContent>
-        <Stack direction="column" spacing={1}>
-          <Stack direction="column" spacing={2}>
-            <Stack direction="row" spacing={2}>
-              <Skeleton variant="text" width={150} />
-              <Skeleton variant="text" width={65} />
-            </Stack>
-            <Divider />
-          </Stack>
-          <Stack direction="column" spacing={1}>
-            <Stack direction="row" spacing={1}>
-              <Skeleton variant="text" width={200} />
-              <Skeleton variant="text" width={100} />
-            </Stack>
-            <Stack direction="row" spacing={1}>
-              <Skeleton variant="text" width={75} />
-              <Skeleton variant="text" width={50} />
-              <Skeleton variant="text" width={175} />
-            </Stack>
-            <Stack direction="row" spacing={1}>
-              <Skeleton variant="text" width={175} />
-              <Skeleton variant="text" width={125} />
-            </Stack>
-          </Stack>
-          <Stack direction="row" spacing={2}>
-            <Skeleton variant="circular" height={CIRCLE_SIZE} width={CIRCLE_SIZE} />
-            <Skeleton variant="circular" height={CIRCLE_SIZE} width={CIRCLE_SIZE} />
-            <Skeleton variant="circular" height={CIRCLE_SIZE} width={CIRCLE_SIZE} />
-          </Stack>
-          <Stack direction="row" spacing={2} pt={2}>
-            <Skeleton variant="rectangular" height={RECT_SIZE[0]} width={RECT_SIZE[1]} />
-            <Skeleton variant="rectangular" height={RECT_SIZE[0]} width={RECT_SIZE[1]} />
-          </Stack>
-        </Stack>
-      </CardContent>
-    </Card>
+    </Paper>
   );
 };
 

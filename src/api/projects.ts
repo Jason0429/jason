@@ -7,7 +7,7 @@ const projectsCollection = collection(db, Collections.projects);
 
 export const getProjects = async (): Promise<Array<Project>> => {
   // Wait to simulate a slow network
-  await new Promise((resolve) => setTimeout(resolve, 1_000));
+  // await new Promise((resolve) => setTimeout(resolve, 1_000));
   const data = await getDocs(query(projectsCollection, orderBy('index')));
   return data.docs.map((doc) => doc.data() as Project);
 };
