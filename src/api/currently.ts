@@ -7,8 +7,7 @@ const currentPositionPath = doc(db, `${Collections.currently}/position`);
 
 export const getCurrentPosition = async (): Promise<string> => {
   // Wait to simulate a slow network
-  await new Promise((resolve) => setTimeout(resolve, 1_000));
-  // return 'Studying Computer Science & Artificial Intelligence @ Northeastern University';
+  // await new Promise((resolve) => setTimeout(resolve, 1_000));
   const doc = await getDoc(currentPositionPath);
   const data = doc.data();
 
@@ -16,5 +15,5 @@ export const getCurrentPosition = async (): Promise<string> => {
     throw new Error('No data found');
   }
 
-  return data['title'];
+  return (data as CareerPosition).title;
 };

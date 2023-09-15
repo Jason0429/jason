@@ -13,10 +13,10 @@ const Layout: Component<Props> = ({ children }) => {
     <Stack
       direction="column"
       sx={{
-        background: theme.palette.background.default,
         width: '100%',
         minHeight: '100vh',
-        px: isAboveMD() ? 15 : 2
+        px: isAboveMD() ? 15 : 2,
+        backgroundColor: theme.palette.background.default
       }}
     >
       {children}

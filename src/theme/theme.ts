@@ -1,44 +1,6 @@
-import { ThemeModes } from '@/enums';
 import { createTheme } from '@suid/material';
 
-export const lightTheme = createTheme({
-  typography: {
-    fontFamily: 'Montserrat, sans-serif',
-    h1: {
-      fontSize: '2rem',
-      fontWeight: 700
-    },
-    subtitle1: {
-      fontSize: '1rem'
-    }
-  },
-  components: {
-    MuiTypography: {
-      defaultProps: {
-        style: {
-          'font-family': 'Montserrat, sans-serif',
-          color: '#222222'
-        }
-      }
-    }
-  },
-  palette: {
-    mode: ThemeModes.light,
-    primary: {
-      main: '#eeeeee'
-    },
-    text: {
-      primary: '#222222',
-      secondary: '#444444'
-    },
-    background: {
-      default: '#eeeeee',
-      paper: '#ffffff'
-    }
-  }
-});
-
-export const darkTheme = createTheme({
+export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 400,
@@ -51,22 +13,38 @@ export const darkTheme = createTheme({
   typography: {
     fontFamily: 'Montserrat, sans-serif',
     h1: {
-      fontSize: '3rem',
-      fontWeight: 700
+      fontSize: '4rem',
+      fontWeight: 800
     },
     h2: {
-      fontSize: '2rem',
-      fontWeight: 700
+      fontSize: '3rem',
+      fontWeight: 800
     },
     h3: {
+      fontSize: '2rem',
+      fontWeight: 800
+    },
+    h4: {
       fontSize: '1.5rem',
-      fontWeight: 700
+      fontWeight: 800
+    },
+    h5: {
+      fontSize: '1rem',
+      fontWeight: 800
     },
     body1: {
-      fontSize: '1rem'
+      fontSize: '0.85rem'
+    },
+    body2: {
+      fontSize: '0.85rem',
+      fontWeight: 500
     },
     subtitle1: {
-      fontSize: '0.8rem'
+      fontSize: '0.7rem'
+    },
+    subtitle2: {
+      fontSize: '0.7rem',
+      fontWeight: 500
     }
   },
   components: {
@@ -74,38 +52,45 @@ export const darkTheme = createTheme({
       defaultProps: {
         animation: 'wave',
         style: {
-          color: '#cccccc'
+          color: '#666666'
         }
       }
     },
     MuiTypography: {
       defaultProps: {
         style: {
-          color: '#ffffff'
+          color: '#252526'
+        }
+      }
+    },
+    MuiCard: {
+      defaultProps: {
+        elevation: 0
+      }
+    },
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+        sx: {
+          borderRadius: 5
         }
       }
     }
   },
   palette: {
-    mode: ThemeModes.dark,
     primary: {
       main: '#222222'
     },
     secondary: {
-      main: '#383838'
+      main: '#252526'
     },
     text: {
-      primary: '#ffffff',
-      secondary: '#dddddd'
+      primary: '#252526',
+      secondary: '#525253'
     },
     background: {
-      default: '#232323',
-      paper: '#404040'
+      default: '#FCFCFC',
+      paper: '#F6F6F6'
     }
   }
 });
-
-export const themes = {
-  [ThemeModes.light]: lightTheme,
-  [ThemeModes.dark]: darkTheme
-};
