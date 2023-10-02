@@ -1,6 +1,3 @@
-import { getResumeLink } from '@/api/resume';
-import { IconButton } from '@/components';
-import { GITHUB_LINK, LINKEDIN_LINK } from '@/constants';
 import { Paths } from '@/enums';
 import { useNavigate } from '@solidjs/router';
 import {
@@ -12,12 +9,6 @@ import {
   useMediaQuery,
   useTheme
 } from '@suid/material';
-import {
-  AiFillGithub as GithubIcon,
-  AiFillLinkedin as LinkedinIcon,
-  AiOutlineMenu as MenuIcon
-} from 'solid-icons/ai';
-import { IoDocumentTextSharp as DocumentIcon } from 'solid-icons/io';
 import { Component, createEffect, createResource, createSignal, on, onMount } from 'solid-js';
 
 import Navlinks from './Navlinks';
