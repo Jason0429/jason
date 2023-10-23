@@ -29,12 +29,12 @@ const Home = () => {
           Hi! I'm Jason Cheung
         </Typography>
         <Stack spacing={1}>
-          <Typography textAlign="center" variant={isAboveMD() ? 'body1' : 'subtitle1'}>
+          <Typography textAlign="center" variant={isAboveMD() ? 'body2' : 'subtitle2'}>
             Computer Science Student @ Northeastern University
           </Typography>
-          <Typography textAlign="center" variant={isAboveMD() ? 'body1' : 'subtitle1'}>
+          {/* <Typography textAlign="center" variant={isAboveMD() ? 'body1' : 'subtitle1'}>
             Former Software Engineer Co-op @ Motorola Solutions
-          </Typography>
+          </Typography> */}
         </Stack>
         {!isAboveMD() && <Navlinks direction="column" />}
       </Stack>

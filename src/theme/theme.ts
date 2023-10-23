@@ -33,10 +33,10 @@ export const theme = createTheme({
       fontWeight: 800
     },
     body1: {
-      fontSize: '0.85rem'
+      fontSize: '0.9rem'
     },
     body2: {
-      fontSize: '0.85rem',
+      fontSize: '0.9rem',
       fontWeight: 500
     },
     subtitle1: {
@@ -52,14 +52,14 @@ export const theme = createTheme({
       defaultProps: {
         animation: 'wave',
         style: {
-          color: '#666666'
+          color: '#555555'
         }
       }
     },
     MuiTypography: {
       defaultProps: {
         style: {
-          color: '#252526'
+          color: '#222222'
         }
       }
     },
@@ -79,18 +79,22 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#222222'
-    },
-    secondary: {
-      main: '#252526'
+      main: '#463F3A',
+      contrastText: '#F4F3EE'
     },
     text: {
-      primary: '#252526',
-      secondary: '#525253'
+      primary: '#222222',
+      secondary: '#666666'
     },
     background: {
-      default: '#FCFCFC',
-      paper: '#F6F6F6'
+      // #EDEDE9
+      // #D6CCC2
+      // #F5EBE0
+      // #E3D5CA
+      // #D5BDAF
+
+      default: '#F5EBE0',
+      paper: '#E3D5CA'
     }
   }
 });

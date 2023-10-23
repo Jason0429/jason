@@ -35,36 +35,43 @@ const Navlinks: Component<Props> = ({ direction = 'row', disableProjects = false
   return (
     <Stack direction={direction} alignItems="center" spacing={direction === 'column' ? 3 : 1}>
       {!disableProjects && (
-        <Paper sx={{ padding: 1 }}>
-          <Button onClick={onProjectsClick}>
-            <Typography variant={isAboveMD() ? 'body1' : 'subtitle1'} textTransform="none">
-              Projects
-            </Typography>
-          </Button>
-        </Paper>
+        // <Paper sx={{ padding: 1 }}>
+        <Button
+          onClick={onProjectsClick}
+          sx={{
+            px: 2,
+            py: 1,
+            border: `1px solid ${theme.palette.text.primary}`
+          }}
+        >
+          <Typography variant={isAboveMD() ? 'body1' : 'subtitle1'} textTransform="none">
+            Projects
+          </Typography>
+        </Button>
+        // </Paper>
       )}
       <Stack direction="row" spacing={1}>
-        <Paper>
-          {resume() ? (
-            <IconButton href={resume()} target="_blank">
-              <DocumentIcon fill={theme.palette.text.primary} />
-            </IconButton>
-          ) : (
-            <IconButton>
-              <CircularProgress size={20} />
-            </IconButton>
-          )}
-        </Paper>
-        <Paper>
-          <IconButton href={GITHUB_LINK} target="_blank">
-            <GithubIcon fill={theme.palette.text.primary} />
+        {/* <Paper> */}
+        {resume() ? (
+          <IconButton href={resume()} target="_blank">
+            <DocumentIcon fill={theme.palette.text.primary} />
           </IconButton>
-        </Paper>
-        <Paper>
-          <IconButton href={LINKEDIN_LINK} target="_blank">
-            <LinkedinIcon fill={theme.palette.text.primary} />
+        ) : (
+          <IconButton>
+            <CircularProgress size={20} />
           </IconButton>
-        </Paper>
+        )}
+        {/* </Paper> */}
+        {/* <Paper> */}
+        <IconButton href={GITHUB_LINK} target="_blank">
+          <GithubIcon fill={theme.palette.text.primary} />
+        </IconButton>
+        {/* </Paper> */}
+        {/* <Paper> */}
+        <IconButton href={LINKEDIN_LINK} target="_blank">
+          <LinkedinIcon fill={theme.palette.text.primary} />
+        </IconButton>
+        {/* </Paper> */}
       </Stack>
     </Stack>
   );

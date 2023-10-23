@@ -61,8 +61,9 @@ const ProjectCard: Component<Props> = ({ project }) => {
                       variant="outlined"
                       size="small"
                       sx={{
-                        fontSize: '0.75rem',
+                        // fontSize: '0.75rem',
                         fontWeight: 500,
+                        borderColor: theme.palette.text.secondary,
                         color: theme.palette.text.secondary
                       }}
                     />
