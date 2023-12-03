@@ -93,8 +93,8 @@ export const theme = createTheme({
       // #E3D5CA
       // #D5BDAF
 
-      default: '#F5EBE0',
-      paper: '#E3D5CA'
+      default: '#FAF9F9',
+      paper: '#FFFFFF'
     }
   }
 });

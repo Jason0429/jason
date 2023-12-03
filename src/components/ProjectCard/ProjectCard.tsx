@@ -1,9 +1,7 @@
-import { GradientUnderlineText, IconButton } from '@/components';
+import { IconButton } from '@/components';
 import { Project } from '@/types';
 import {
   Card,
-  CardActionArea,
-  CardActions,
   CardContent,
   Chip,
   Divider,
@@ -32,7 +30,11 @@ const ProjectCard: Component<Props> = ({ project }) => {
     const { title, desc, languages, github, website } = project;
 
     return (
-      <Paper>
+      <Paper
+        sx={{
+          border: '1px solid #E0E0E080'
+        }}
+      >
         <Card
           sx={{
             height: CARD_HEIGHT,
