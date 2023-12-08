@@ -5,7 +5,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import suidPlugin from "@suid/vite-plugin";
 
 export default defineConfig({
-  plugins: [tsconfigPaths(), solid(), suidPlugin(), solidPlugin()],
+  plugins: [tsconfigPaths(), solid({
+    ssr: false
+  }), suidPlugin(), solidPlugin()],
   build: {
     target: "esnext"
   }
