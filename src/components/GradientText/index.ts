@@ -1,1 +1,1 @@
-export { default } from './GradientText';
+export { default } from "./GradientText";

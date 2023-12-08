@@ -1,5 +1,6 @@
 export enum Paths {
-  home = '/',
-  projects = '/projects',
-  notFound = '*'
+  home = "/",
+  projects = "/projects",
+  resume = "/resume",
+  notFound = "*"
 }

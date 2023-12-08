@@ -1,5 +1,5 @@
-import { IconButton } from '@/components';
-import { Project } from '@/types';
+import IconButton from "@/components/IconButton";
+import { Project } from "@/types";
 import {
   Card,
   CardContent,
@@ -10,12 +10,12 @@ import {
   Stack,
   Typography,
   useTheme
-} from '@suid/material';
-import { AiFillGithub as GithubIcon } from 'solid-icons/ai';
-import { CgWebsite as WebsiteIcon } from 'solid-icons/cg';
-import { Component, For } from 'solid-js';
+} from "@suid/material";
+import { AiFillGithub as GithubIcon } from "solid-icons/ai";
+import { CgWebsite as WebsiteIcon } from "solid-icons/cg";
+import { Component, For } from "solid-js";
 
-const CARD_HEIGHT = '350px';
+const CARD_HEIGHT = "350px";
 const CIRCLE_SIZE: [number, number] = [20, 50];
 const RECT_SIZE: [number, number] = [30, 100];
 
@@ -32,13 +32,13 @@ const ProjectCard: Component<Props> = ({ project }) => {
     return (
       <Paper
         sx={{
-          border: '1px solid #E0E0E080'
+          border: "1px solid #E0E0E080"
         }}
       >
         <Card
           sx={{
             height: CARD_HEIGHT,
-            width: '100%'
+            width: "100%"
           }}
         >
           <CardContent>
@@ -51,9 +51,9 @@ const ProjectCard: Component<Props> = ({ project }) => {
               <Stack
                 direction="row"
                 sx={{
-                  flexWrap: 'wrap',
+                  flexWrap: "wrap",
                   gap: 1,
-                  maxWidth: '100%'
+                  maxWidth: "100%"
                 }}
               >
                 <For each={languages}>
@@ -96,7 +96,7 @@ const ProjectCard: Component<Props> = ({ project }) => {
       <Card
         sx={{
           height: CARD_HEIGHT,
-          width: '100%'
+          width: "100%"
         }}
       >
         <CardContent>
@@ -126,9 +126,9 @@ const ProjectCard: Component<Props> = ({ project }) => {
             <Stack
               direction="row"
               sx={{
-                flexWrap: 'wrap',
+                flexWrap: "wrap",
                 gap: 1,
-                maxWidth: '100%'
+                maxWidth: "100%"
               }}
             >
               <For each={Array(6)}>
@@ -145,8 +145,16 @@ const ProjectCard: Component<Props> = ({ project }) => {
               </For>
             </Stack>
             <Stack direction="row" spacing={1}>
-              <Skeleton variant="rectangular" height={RECT_SIZE[0]} width={RECT_SIZE[1]} />
-              <Skeleton variant="rectangular" height={RECT_SIZE[0]} width={RECT_SIZE[1]} />
+              <Skeleton
+                variant="rectangular"
+                height={RECT_SIZE[0]}
+                width={RECT_SIZE[1]}
+              />
+              <Skeleton
+                variant="rectangular"
+                height={RECT_SIZE[0]}
+                width={RECT_SIZE[1]}
+              />
             </Stack>
           </Stack>
         </CardContent>
